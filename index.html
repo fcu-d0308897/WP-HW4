@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <p>請選擇學院</p>
     <select id="collage_test" onchange="change(this.value)"></select>
+    <p>請選擇科系</p>
     <select id="department_test"></select>
     <script>
     var collages = {
@@ -60,6 +62,8 @@
         option.text = collages_list[i]
         x.add(option)
     }
+    var y = document.getElementById("collage_test").value
+    change(y)
     function change(data){
         var x = document.getElementById("department_test")
         var department = collages[data]
