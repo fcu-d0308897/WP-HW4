@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <select id="collage_test" onchange="change(this.value)"></select>
+    <select id="department_test"></select>
+    <script>
+    var collages = {
+        "商學院":[
+            "會計學系",
+            "國貿系",
+            "經濟系"
+        ],
+        "工學院":[
+            "機電系",
+            "纖複系",
+            "航太系"
+        ],
+        "資電學院":[
+            "通訊系",
+            "資訊系",
+            "自控系",
+            "肥宅系"
+        ],
+        "人文社會學院":[
+            "中文系",
+            "外文系",
+            "歷史文物研究所"
+        ],
+        "建設學院":[
+            "水利系",
+            "土木系",
+            "土管系"
+        ],
+        "理學院":[
+            "應數系",
+            "環科系",
+            "光電系",
+            "電梯系"
+        ],
+        "金融學院":[
+            "風保系",
+            "財金系",
+            "財務工程與精算學位"
+        ],
+        "建築專業學院":[
+            "建築學院學士班",
+            "建築學士學位學程",
+            "室內設計進修學士班"
+        ]}
+    var collages_list = Object.keys(collages)
+    var x = document.getElementById("collage_test")
+    for(var i=0; i<collages_list.length; i++) {
+        var option = document.createElement("option")
+        option.text = collages_list[i]
+        x.add(option)
+    }
+    function change(data){
+        var x = document.getElementById("department_test")
+        var department = collages[data]
+        // clear option
+        x.innerHTML = ""
+        for(var i=0; i<department.length; i++) {
+            var option = document.createElement("option")
+            option.text = department[i]
+            x.add(option)
+        }
+    }
+    </script>
+</body>
+</html>
